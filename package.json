@@ -3,10 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack",
+    "dev": "next dev ",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "predev": "npm run typegen",
+    "prebuild": "npm run typegen",
+    "typegen": "sanity schema extract --path=./sanity/extract.json && sanity typegen generate"
   },
   "packageManager": "npm@10.5.2",
   "overrides": {
@@ -15,12 +18,22 @@
     "next": "$next"
   },
   "dependencies": {
+    "@sanity/image-url": "^1.1.0",
+    "@sanity/vision": "^3.64.3",
     "@tailwindcss/typography": "^0.5.15",
-    "next": "15.0.3",
+    "@types/markdown-it": "^14.1.2",
+    "lucide-react": "^0.461.0",
+    "markdown-it": "^14.1.0",
+    "next": "^15.0.4-canary.28",
     "next-auth": "^5.0.0-beta.25",
+    "next-sanity": "^9.8.3-canary.1",
     "react": "19.0.0-rc-66855b96-20241106",
     "react-dom": "19.0.0-rc-66855b96-20241106",
     "react-icons": "^5.3.0",
+    "sanity": "^3.64.3",
+    "sanity-plugin-markdown": "^5.0.0",
+    "server-only": "^0.0.1",
+    "styled-components": "^6.1.13",
     "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
